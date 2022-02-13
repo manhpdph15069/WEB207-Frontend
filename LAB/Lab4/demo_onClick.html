@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="dem0_input_app">
+    <div ng-controller="my_controller">
+        <button ng-click="onClick()">Click me</button>
+        
+    </div>
+    
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('dem0_input_app',[]);
+
+        function myController($scope){
+            $scope.onClick = function(){
+                alert('Hello');
+            }
+        }
+        app.controller("my_controller",myController);
+    </script>
+</body>
+</html>

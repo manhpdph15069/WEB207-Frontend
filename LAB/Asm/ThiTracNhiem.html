@@ -1,0 +1,98 @@
+
+            <!-- <div class="card">
+                <div class="card-header fs-3">
+                 <b>Xây dựng trang web</b>
+                 <h5 class="float-end"><span class="badge bg-info ">00:66</span></h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <h5 class="card-title col-11">1.Trong kỹ thuật chỉnh nâng cao có kỹ thuật nào ?</h5>
+                       
+                        <hr>
+                    </div>
+                  
+
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="#" id="#">
+                    <label class="form-check-label" for="#">
+                      Đối xứng
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="#" id="#" checked>
+                    <label class="form-check-label" for="#">
+                      Bẻ văn bản
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="#" id="#">
+                    <label class="form-check-label" for="#">
+                      Khối văn bản
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="#" id="#" checked>
+                    <label class="form-check-label" for="#">
+                      Không đối xứng
+                    </label>
+                  </div> -->
+
+                  <div class="card">
+                    <div class="card-header fs-3">
+                     <b>{{listQA[index].khoaHoc}}</b>
+                     <h5 class="float-end"><span class="badge bg-info ">00:66</span></h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <h5 class="card-title col-11">{{listQA[index].cauHoi}}</h5>
+                           
+                            <hr>
+                        </div>
+                      
+    
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="#" id="#">
+                        <label class="form-check-label" for="#">
+                          {{listQA[index].dapAnA}}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="#" id="#" checked>
+                        <label class="form-check-label" for="#">
+                          {{listQA[index].dapAnB}}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="#" id="#">
+                        <label class="form-check-label" for="#">
+                          {{listQA[index].dapAnC}}
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="#" id="#" checked>
+                        <label class="form-check-label" for="#">
+                          {{listQA[index].dapAnD}}
+                        </label>
+                      </div>
+
+
+                </div>
+                <div class="card-footer text-muted">
+                  MARKS: {{index+1}}/10
+                </div>
+              </div>
+              <div class="row text-center mt-5">
+
+                <nav aria-label="...">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item" ng-click="prevQA()">
+                            <button class="page-link">Trước</button>
+                        </li>
+                        
+                        <li class="page-item">
+                            <button  class="page-link" ng-click="nextQA()" >Tiếp</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+       

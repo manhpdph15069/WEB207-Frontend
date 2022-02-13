@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="container-sm">
+        <div class="card">
+            <div class="card-header text-uppercase  bg-secondary bg-opacity-10">
+                <b class="bi bi-list-ul ">&nbsp; Nhập Lương Tháng 12</b>
+            </div>
+            <form action="#">
+                <div class="row m-3">
+                    <div class="from-group col-sm-6">
+                        <label for=""><b>Mã Nhân Viên</b></label>
+                        <input type="text" class="form-control fs-6 text" placeholder="Mã nhân viên">
+                    </div>
+                    <div class="from-group col-sm-6">
+                        <label for=""><b>Tên Nhân Viên</b></label>
+                        <input type="text" class="form-control fs-6 text" placeholder="Tên Nhân viên">
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="from-group col-sm-6">
+                        <label for="exampleDataList" class="form-label m-0"><b>Câu Lạc Bộ</b></label>
+                        <select class="form-select fs-6 text" aria-label="Default select example">
+                            <option selected disabled>Chọn cơ sở</option>
+                            <option value="1">Hà Nội</option>
+                            <option value="2">HCM</option>
+                        </select>
+                    </div>
+                    <div class="from-group col-sm-6">
+                        <label for=""><b>Lương</b></label>
+                        <input type="text" class="form-control fs-6 text" placeholder="Lương">
+                    </div>
+                </div>
+                <div class="row m-3">
+                    <div class="from-group col-sm-6">
+                        <label for=""><b>Thưởng</b></label>
+                        <input type="text" class="form-control fs-6 text" placeholder="Thưởng">
+                    </div>
+                    <div class="from-group col-sm-6">
+                        <label for=""><b>Phụ cấp</b></label>
+                        <input type="text" class="form-control fs-6 text" placeholder="Phụ cấp">
+                    </div>
+                </div>
+                <div class="px-4 mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label"><b>Ghi chú</b></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                </div>
+                <div class="row m-3 pt-2">
+                    <div class="from-group col-sm-6">
+                        <button type="button" class="m-2 mb-5  fs-6 bi bi-save-fill btn btn-dark">
+                            
+                            Lưu</button>
+                        <button type="button" class="m-2 mb-5 fs-6 bi bi-square-fill btn btn-dark">
+                            
+                            Hủy</button>
+                    </div>
+                </div>
+            </form>
+            <div class="card-footer bg-secondary bg-opacity-10">
+                Vui lòng nhập thông tin lương cầu thủ
+            </div>
+        </div>
+    </div>
+   
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

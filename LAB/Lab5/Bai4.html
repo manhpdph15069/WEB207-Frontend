@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body ng-app="bai1_app" style="width: 900px;">
+    <div  ng-controller="my_bai1_controller1">
+    <div class="container border border-1 p-3 col-12 col-xs-12 col-md-12" >
+        <form action="">
+            <div class="form-group">
+                <label for="">Họ và tên</label>
+                <input type="text" class="form-control" ng-model="student.fullName">
+            </div>
+            <div class="form-group">
+                <label for="">Ngày sinh</label>
+                <input type="text" class="form-control" ng-model="student.birthday">
+            </div>
+            <div class="form-group">
+                <label for="">Điểm</label>
+                <input ng-model="student.mark" class="form-control"></input>
+            </div>
+            <div class="form-group">
+                <button ng-show="index == -1" class="btn btn-info mt-2" ng-click="insert()">Thêm</button>
+                <button ng-hide ="index == -1" class="btn btn-info mt-2" ng-click="update()">Sửa</button>
+                <button ng-hide ="index == -1" class="btn btn-info mt-2" ng-click="delete()">Xóa</button>
+                <button class="btn btn-danger mt-2" ng-click="cancel()">Hủy</button>
+                <button class="btn btn-danger mt-2" ng-click="clear()">Mới</button>
+            </div>
+        </form>
+    </div>
+    <!-- ----------------------------------- -->
+    <div>
+        <table class="table table-bordered">
+            
+              <tr>
+                <th scope="col">Họ và tên</th>
+                <th scope="col">Ngày sinh</th>
+                <th scope="col">Điểm</th>
+                <th scope="col">Xếp loại</th>
+
+                <th></th>
+              </tr>
+          
+           
+              <tr ng-repeat="sv in students">
+                <td>{{sv.fullName}}</td>
+                <td>{{sv.birthday}}</td>
+                <td>{{sv.mark}}</td>
+                <td>
+                    <span ng-if="sv.mark < 5">Yếu/Kém</span>
+                    <span ng-if="sv.mark >=5 && sv.mark <= 8">Trung bình/Khá</span>
+                    <span ng-if="sv.mark >8">Giỏi/Xuất sắc</span>
+                </td>
+                <td>
+                    <a href="#" ng-click="edit($index)">Sửa</a>
+                </td>
+              </tr>
+        
+          </table>
+    </div>
+</div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('bai1_app', []);
+
+        function myBai1Controller1($scope) {
+            $scope.students = [
+                {
+                    fullName:"Nguyen Van Teo",
+                    birthday:"10-02-2000",
+                    mark:"8"
+                },
+                {
+                    fullName:"Nguyen Van No",
+                    birthday:"10-02-2000",
+                    mark:"5"
+                }
+            ];
+             $scope.student={};
+            $scope.index = -1;
+
+            $scope.clear  = function(){
+                $scope.student = {};
+                $scope.index = -1;
+            }
+            $scope.insert  = function(){
+                $scope.students.push(angular.copy($scope.student));
+                $scope.clear();
+            }
+            $scope.update = function(){
+                $scope.students[$scope.index] = angular.copy($scope.student);
+            }
+            $scope.delete = function(){
+                $scope.students.splice($scope.index, 1);
+                $scope.clear();
+            }
+            $scope.cancel = function(){
+                if($scope.index == -1){
+                    $scope.clear();
+                }else{
+                    $scope.edit($scope.index);
+                }
+            }
+            $scope.edit = function(index) {
+                $scope.index = index;
+                $scope.student = angular.copy($scope.students[index]);
+            }
+        }
+
+        app.controller('my_bai1_controller1', myBai1Controller1);
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

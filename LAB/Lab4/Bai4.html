@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+<body ng-app="my_app">
+    <div ng-controller="my_bai4" class="container border border-1 p-3 col-12 col-xs-12 col-md-12" style="width: 300px;">
+        <form action="">
+            <div class="form-group">
+                <label for="">Chiều dài</label>
+                <input type="text" class="form-control" ng-model="width">
+            </div>
+            <div class="form-group">
+                <label for="">Chiều dài</label>
+                <input type="text" class="form-control" ng-model="length">
+            </div>
+            <div class="form-group">
+                <label for="">Chu vi</label>
+                <input ng-model="chuVi" class="form-control" ></input>
+            </div>
+            <div class="form-group">
+                <label for="">Diện tích</label>
+                <input ng-model="dienTich" class="form-control"></input>
+            </div>
+        </form>
+        <button class="btn btn-primary mt-2" ng-click="calculate()">Calculate</button>
+    </div>
+    
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('my_app',[]);
+
+        function myBai4($scope){
+            $scope.calculate = function(){
+                var a = parseFloat($scope.width);
+                var b = parseFloat($scope.length);
+                $scope.chuVi = (a+b) *2;
+                $scope.dienTich = a *b;
+            }
+
+        }
+        app.controller('my_bai4',myBai4);
+    </script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

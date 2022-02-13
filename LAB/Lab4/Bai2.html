@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="Bai1_app">
+    <div ng-controller="my_Bai1">
+        <img src="{{Student.photo}}" alt="">
+        <ul>
+            <li>Họ và tên: {{Student.ten}}</li>
+            <li>Ngày sinh: {{Student.ngaySinh}}</li>
+            <li>Giới tính: {{Student.gioiTinh}}</li>
+            <li>Điểm: {{Student.diem}}</li>
+        </ul>
+    </div>
+    
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('Bai1_app',[]);
+
+        function myBai1($scope){
+            $scope.Student = {
+                ten : "Tèo",
+                ngaySinh:"10-01-2002",
+                gioiTinh: "Nam",
+                diem: "8.6",
+                photo: "https://i.pinimg.com/236x/43/53/96/4353966bf1822dc941902cb017e73859.jpg"
+            };
+
+        }
+        app.controller('my_Bai1',myBai1);
+
+    </script>
+</body>
+</html>

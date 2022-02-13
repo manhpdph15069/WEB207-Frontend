@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-image: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg');
+        }
+    </style>
+</head>
+
+<body ng-app="asm">
+    <!-- Start container -->
+    <div class="container p-0">
+        <!-- Start Header -->
+        <header class="row">
+            <div class="col-12 img-thumbnail border-0 ">
+                <img src="https://caodang.fpt.edu.vn/wp-content/uploads/Banner1-1.png" style="width: 100%;" alt="">
+            </div>
+        </header>
+        <!-- End Header -->
+        <!-- Start Menu-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light p-2 pt-1">
+            <div class="container-fluid">
+                <a class="navbar-brand text-black bi bi-mortarboard-fill" href="#!/">&nbsp; FPT
+                    Polytechmic</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-blockquote-left" aria-current="page" href="#!/gioi-thieu">&nbsp;
+                                Giới thiệu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-telephone-fill" href="#!/lien-he">&nbsp; Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-envelope" href="#!/gop-y">&nbsp; Góp ý</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link bi bi-question-circle-fill" href="#!/hoi-dap">&nbsp; Hỏi đáp</a>
+                        </li>
+
+                    </ul>
+                    <span class="nav-item dropleft">
+                        <a class="nav-link dropdown-toggle bi bi-person-circle p-1 text-black" href="#"
+                            id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tài khoản
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-sm-start dropdown-menu-md-end"
+                            aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="DangKy.html">Đăng ký</a></li>
+                            <li><a class="dropdown-item" href="DangNhap.html">Đăng nhập</a></li>
+                            <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">Đăng xuất</a></li>
+                            <li><a class="dropdown-item" href="DoiMatKhau.html">Đổi mật khẩu</a></li>
+                            <li><a class="dropdown-item" href="UpdateTT.html">Cập nhập tài khoản</a></li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <!-- End Menu -->
+        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Đăng xuất</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn chắc chắn muốn đăng xuất ?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="button" class="btn btn-primary">Yes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Start body -->
+        <div class="row mt-3 m-0">
+            <!-- Giữa -->
+            <div ng-controller="AppController" ng-view class="col-12 col-md-9 ps-0"></div>
+            <!-- End Giữa -->
+
+            <!-- Bên phải -->
+            <div class="col-12 col-md-3 border-1 p-0">
+                <div class="card">
+                    <div class="card-header  bi bi-list">
+                        Danh mục
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Kiểm thử và triển khai
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                SQL Server
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Điện toán đám mây
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình JAva
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình PHP
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình Android cơ bản
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình Android nâng cao
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Thiết kế layout
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Thiết kế giao diện Android
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Quản lý dự án Agile
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Internet Marketing
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình OOP
+                            </a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" class="text-decoration-none text-secondary">
+                                Lập trình ASP.NET
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End Bên phải     -->
+        </div>
+        <!-- End body -->
+        <!-- <footer-->
+
+        <footer class="row bg-primary opacity-55 m-0">
+            <div class="col-sm-3">
+                <img src="https://phothongcaodang.fpt.edu.vn/wp-content/uploads/LOGO-PTC%C4%90-White-Transparency.png"
+                    class="w-75 pt-2" alt="">
+            </div>
+            <div class="col-sm-3 pt-3">
+                <h5 class="text-uppercase text-white">Thông tin liên hệ</h5>
+                <p class="text-white">
+                    <i class="bi bi-envelope-fill"></i> Email: caodangefpt.edu.vn
+                    <br>
+                    <i class="bi bi-telephone-fill"></i> <span class="text-decoration-underline">(024) 7300 1955</span>
+                </p>
+            </div>
+            <div class="col-sm-6 pt-3">
+                <h5 class="text-uppercase text-white">Địa chỉ cơ sở Hà Nội</h5>
+                <p class="text-white">
+                    <i class="bi bi-geo-alt-fill"></i> Tòa nhà FPT Polytechnic, Phố Trịnh Văn Bô, Nam Từ Liêm, Hà Nội
+                    <br>
+                    <i class="bi bi-telephone-fill"></i> <span class="text-decoration-underline">(024) 8582 0808</span>
+                </p>
+            </div>
+        </footer>
+        <!--End footer-->
+    </div>
+    <!-- end container -->
+
+
+    <script src="js/angularjs.min.js"></script>
+    <script src="js/angular-route.min.js"></script>
+    <script src="app.js">
+        // const app = angular.module('asm', ['ngRoute']);
+        // app.config(function($routeProvider){
+        //     $routeProvider.when('/gioi-thieu',{
+        //         templateUrl: "GioiThieu.html"
+        //     }).when('/',{
+        //         templateUrl: "Trangchu.html"
+        //     }).when('/hoi-dap',{
+        //         templateUrl: "Hoidap.html"
+        //     }).when('/gop-y',{
+        //         templateUrl: "gopy.html"
+        //     }).when('/lien-he',{
+        //         templateUrl: "LienHe.html"
+        //     }).when('/thi-trac-nhiem',{
+        //         templateUrl: "ThiTracNhiem.html"
+        //     }).otherwise(
+        //         {
+        //             template: "Lỗi ròi"
+        //         }
+        //     )
+        // });
+       
+    </script>
+
+</body>
+
+</html>

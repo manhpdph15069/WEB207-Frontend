@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="hello_app">
+    <div ng-controller="hello_controller">
+        <h1>{{message}}</h1>
+    </div>
+
+
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        //B1 tạo mới 1 UD AngulerJS với tên "hello_app"
+       const app = angular.module("hello_app",[]);
+        
+       //B2 khai báo phạm vi hoạt động của UD với chỉ thị ng-app
+       //B3 tạo các controller và khai báo với UD
+       function helloController($scope) {
+           $scope.message = "Hello";
+       }
+
+       app.controller("hello_controller",helloController);
+
+       //Khai báo phạm vi hoạt động của controller
+       //B4 Sử dụng Anguler Expression để hiển thị giá trị
+    </script>
+</body>
+</html>

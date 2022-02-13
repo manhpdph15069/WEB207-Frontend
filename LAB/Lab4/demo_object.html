@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body ng-app="demo_object_app">
+ 
+        <ul ng-controller="my_controller">
+            <li>{{info.ma}}</li>
+            <li>{{info.ten}}</li>
+            <li>{{info.email}}</li>
+        </ul>
+    
+    
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module("demo_object_app",[]);
+
+        function my ($scope){
+            $scope.info = {
+                ten:"MẠnh",
+                ma:"PH15069",
+                email: "@gmail.com"
+            };
+            
+        }
+        app.controller("my_controller",my)
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body ng-app="Bai3_app">
+  <div>
+    <table ng-controller="Bai3_Controller" class="table table-bordered table-hover table-info">
+      <thead>
+        <tr class="text-center">
+          <th style="width: 200px" scope="col">Hình</th>
+          <th scope="col">Họ và tên</th>
+          <th scope="col">Ngày sinh</th>
+          <th scope="col">Giới tính</th>
+          <th scope="col">Điểm</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sv in students">
+          <td scope="row"><img class="rounded mx-auto d-block w-50 " src="{{sv.photo}}" alt=""></td>
+          <td>{{sv.name}}</td>
+          <td>{{sv.birthday}}</td>
+          <td>{{sv.gender}}</td>
+          <td>{{sv.mark}}</td>
+        </tr>
+        <!-- <tr>
+          <td scope="row"><img class="rounded mx-auto d-block w-50 h-50" src="{{students[1].photo}}" alt=""></td>
+          <td>{{students[1].name}}</td>
+          <td>{{students[1].birthday}}</td>
+          <td>{{students[1].gender}}</td>
+          <td>{{students[1].mark}}</td>
+        </tr>
+        <tr>
+          <td scope="row"><img class="rounded mx-auto d-block w-50 h-50"  src="{{students[2].photo}}" alt=""></td>
+          <td>{{students[2].name}}</td>
+          <td>{{students[2].birthday}}</td>
+          <td>{{students[2].gender}}</td>
+          <td>{{students[2].mark}}</td>
+        </tr> -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="js/angularjs.min.js"></script>
+  <script>
+    const app = angular.module('Bai3_app', []);
+    function my_Bai3($scope) {
+      $scope.students = [
+        {
+          photo: "https://i.pinimg.com/236x/43/53/96/4353966bf1822dc941902cb017e73859.jpg",
+          name: "Phạm Đức Mạnh",
+          birthday: "10-01-2002",
+          gender: "Nam",
+          mark: "9"
+        },
+        {
+          photo: "img/thànhDZ.jpg",
+          name: "Trần Văn Thành",
+          birthday: "10-01-2002",
+          gender: "Nam",
+          mark: "9"
+        },
+        {
+          photo: "img/7aaf7dc12b63e23dbb72.jpg",
+          name: "Hoàng Trung Thông",
+          birthday: "10-01-2002",
+          gender: "Nữ",
+          mark: "9"
+        }
+      ];
+    }
+    app.controller('Bai3_Controller', my_Bai3);
+  </script>
+  <script src="js/jquery.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
