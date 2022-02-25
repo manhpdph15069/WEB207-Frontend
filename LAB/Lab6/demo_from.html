@@ -95,15 +95,21 @@
                                 <label for="number" class="col-2">SĐT</label>
                                 <div class="col-10">
                                     <input type="tel" class="form-control" name="number" id="number" />
-                                    <small class="text-danger">Sai định dạng email</small>
                                 </div>
                             </div>
                             <div class="mt-2 row">
                                 <label for="email" class="col-2">Email</label>
                                 <div class="col-10">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" name="email" id="email" />
-                                        <span class="input-group-text" id="basic-addon2">@fpt.edu.vn</span>
+                                        <input type="email" class="form-control" name="email" id="email" ng-model="email" required/>
+                                        <div ng-hide="form_user.email.$valid  || form_user.email.$untouched" class="text-danger">
+                                            <small ng-show="form_user.email.$error.required">
+                                                Không được để trống
+                                            </small>
+                                            <small ng-show="form_user.email.$error.email">
+                                                Sai định dạng
+                                            </small>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +122,15 @@
                             <div class="mt-2 row">
                                 <label for="password" class="col-2">Mật khẩu</label>
                                 <div class="col-10">
-                                    <input type="password" class="form-control" name="password" id="password" />
+                                    <input type="password" ng-model="sv.password" min="6" check-password class="form-control" name="password" id="password" required/>
+                                    <div ng-hide="form_user.password.$valid  || form_user.password.$untouched " class="text-danger">
+                                            <small ng-show="form_user.password.$error.required">
+                                                Không được để trống
+                                            </small>
+                                            <small ng-show="form_user.password.$error.check_length_pwd">
+                                                Tối thiếu 6 ký tự
+                                            </small>
+                                        </div>
                                 </div>
                             </div>
                             <div class="mt-2 row">
@@ -124,7 +138,7 @@
                                 <div class="col-10">
                                     <select class="form-select" ng-model="sv.chuyen_nganh"  name="chuyen_nganh" id="chuyen_nganh">
                                         <!-- <option selected disabled>Chọn chuyên ngành</option> -->
-                                        <option ng-repeat="n in cn" value="{{n}}">{{c}}</option>
+                                        <option ng-repeat="n in cn" value="{{n}}">{{n}}</option>
                                         <!-- <option value="tktw">Thiết kế trang web</option> -->
                                         <!-- <option value="ltmt">Lập trình máy tính</option> -->
                                     </select>
@@ -182,6 +196,25 @@
             
         }
         app.controller('AppController', formCtrl);
+
+        app.directive("checkPassword",function(){
+            return{
+                require: "ngModel",
+                link: function(scope,element,attr,mCtrl){
+                    const fnValidate = function(value){
+                        //Kiểm tra thông tin ...
+                        if(value.length >6){
+                            mCtrl.$setValidity("check_length_pwd",false);
+                        }else{ 
+                            mCtrl.$setValidity("check_length_pwd",true);
+
+                        }
+                    }
+
+                    mCtrl.$parsers.push(fnValidate);
+                }
+            };
+        });
     </script>
 </body>
 </html>

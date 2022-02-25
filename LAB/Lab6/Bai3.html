@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body ng-app="app">
+
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-8">
+            <div class="container">
+                <div class="card">
+                    <div class="card-header text-uppercase">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-brush-fill pe-2" viewBox="0 0 16 16">
+                            <path
+                                d="M15.825.12a.5.5 0 0 1 .132.584c-1.53 3.43-4.743 8.17-7.095 10.64a6.067 6.067 0 0 1-2.373 1.534c-.018.227-.06.538-.16.868-.201.659-.667 1.479-1.708 1.74a8.118 8.118 0 0 1-3.078.132 3.659 3.659 0 0 1-.562-.135 1.382 1.382 0 0 1-.466-.247.714.714 0 0 1-.204-.288.622.622 0 0 1 .004-.443c.095-.245.316-.38.461-.452.394-.197.625-.453.867-.826.095-.144.184-.297.287-.472l.117-.198c.151-.255.326-.54.546-.848.528-.739 1.201-.925 1.746-.896.126.007.243.025.348.048.062-.172.142-.38.238-.608.261-.619.658-1.419 1.187-2.069 2.176-2.67 6.18-6.206 9.117-8.104a.5.5 0 0 1 .596.04z" />
+                        </svg><b>Tính lương tết nguyên đán</b>
+                    </div>
+
+
+                    <form action="#" ng-controller="myCtrll" name="frmBonus">
+                        <div class="from-group mb-3 ">
+                            <label class="" for="#"><b>Họ và tên</b></label>
+                            <input type="text" class="form-control fs-3
+                             text mt-2" placeholder="Họ và tên" ng-model="fullname" id="fullname" name="fullname"
+                                required>
+                                <div ng-hide=" frmBonus.fullname.$untouched || frmBonus.fullname.$valid">
+                                    <small class="text-danger"
+                                    >Vui lòng nhập họ và
+                                    tên</small>
+                                </div>
+                                
+                            <label class="p-0" for="#"><b>Lương</b></label>
+                            <div class="input-group p-0 pt-2 pb-1">
+                                <input type="number" min="2000000" class="form-control fs-3 text"
+                                    aria-label="Amount (to the nearest dollar)" name="txtSalary" ng-model="salary">
+                                <span class="input-group-text">VND</span>
+                            </div>
+                            <span class="text-danger" ng-show="frmBonus.txtSalary.$invalid">Lương ít nhất 2
+                                triệu</span><br>
+                            <label class="p-0 pb-2" for="#"><b>Giới tính</b></label>
+                            <div class="px-5 pb-2">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        ng-model="gender" value="Nam" id="inlineRadio1">
+                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                        id="inlineRadio2" ng-model="gender" value="Nu">
+                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                </div>
+                            </div>
+                            <label class="" for="#"><b>Độ tuổi</b></label>
+                            <div class="input-group mb-3 p-0 pt-2">
+                                <select class="form-select fs-3 text" id="inputGroupSelect02" ng-model="age"
+                                    ng-options="x.age for x in ages">
+                                </select>
+                            </div>
+                            <h4 class="text-primary" ng-show="frmBonus.$valid">
+                                Chúc mừng bạn đã nhập đúng
+                            </h4>
+                            <div class="card-footer">
+                                Tiền Thưởng : <b><strong>{{getBonus()|number : 2}}</strong></b> VNĐ
+                            </div>
+                    </form>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2"></div>
+    </div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('app', []);
+
+        app.controller("myCtrll", function ($scope) {
+            $scope.ages = [
+                {
+                    age: "Dưới 25",
+                    rate: 0.07
+                },
+                {
+                    age: "Từ 25 đến 40",
+                    rate: 0.1
+                },
+                {
+                    age: "Trên 40",
+                    rate: 0.15
+                }
+            ];
+            $scope.age = $scope.ages[1];
+            $scope.gender = "Nam";
+
+            $scope.getBonus = () => {
+                var bonus = $scope.age.rate * $scope.salary;
+                if ($scope.gerder == "Nu") {
+                    bonus += 200000;
+                }
+                return bonus;
+            }
+        });
+
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>

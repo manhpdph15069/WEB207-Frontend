@@ -22,12 +22,13 @@
         <div class="row text-center text-primary">
             <h2>Đăng nhập</h2>
         </div>
-       <form action="">
+       <form action="" name="frmLogin">
         <div class="row mt-4">
             <div class=" input-group flex-nowrap">
                 <span class="input-group-text bi bi-person-fill" id="addon-wrapping"></span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                <input type="text" name="userName" id="userName" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping" required>
             </div>
+            <small class="text-danger" ng-show="frmLogin.us">Không được để trống !!!</small>
         </div>
         <div class="row mt-4">
             <div class=" input-group flex-nowrap">

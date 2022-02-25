@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+</head>
+
+<body ng-app="bai1_app" style="width: 900px;">
+    <div  ng-controller="my_bai1_controller1">
+    <div class="container border border-1 p-3 col-12 col-xs-12 col-md-12" >
+        <form action="" method="POST" ng-submit="onSubmitForm($event)">
+            <div class="form-group">
+                <label for="">Họ và tên</label>
+                <input type="text" class="form-control" ng-model="student.fullName">
+            </div>
+            <div class="form-group">
+                <label for="">Ngày sinh</label>
+                <input type="text" class="form-control" ng-model="student.birthday">
+            </div>
+            <div class="form-group">
+                <label for="">Điểm</label>
+                <input ng-model="student.mark" class="form-control"></input>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-info mt-2" ng-click="insert()">Thêm</button>
+                <button ng-hide ="index == -1" class="btn btn-info mt-2" ng-click="update()">Sửa</button>
+                <button ng-hide ="index == -1" class="btn btn-info mt-2" ng-click="delete()">Xóa</button>
+                <button class="btn btn-danger mt-2" ng-click="cancel()">Hủy</button>
+                <button class="btn btn-danger mt-2" ng-click="clear()">Mới</button>
+            </div>
+        </form>
+    </div>
+    <!-- ----------------------------------- -->
+    <div>
+        <table class="table table-bordered">
+            
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Họ và tên</th>
+                <th scope="col">Ma SV</th>
+                <th scope="col">Chuyeenr nganh</th>
+                <th scope="col">Thao tac</th>
+
+                <th></th>
+              </tr>
+          
+           
+              <tr ng-repeat="sv in students">
+                <td>{{sv.id}}</td>
+                <td>{{sv.name}}</td>
+                <td>{{sv.code}}</td>
+                <td>{{sv.chuyen_nganh}}</td>
+                
+                <td>
+                    <button class="btn btn-primary"  ng-click="edit($index)">Sửa</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" >Xóa</button>
+                </td>
+              </tr>
+        
+          </table>
+    </div>
+</div>
+    <script src="js/angularjs.min.js"></script>
+    <script>
+        const app = angular.module('bai1_app', []);
+
+        function myBai1Controller1($scope,$http) {
+            $scope.students=[];
+            const url = 'https://620b061fbeee430017f38481.mockapi.io/students';
+            $http.get(url)// gửi 1 request GET tới API
+                .then(function(response){
+                    console.log(response);
+                    $scope.students =response.data;
+                });
+           
+
+                $scope.onSubmitForm = function(event){ 
+                    event.preventDefault();
+                }
+
+        }
+
+        app.controller('my_bai1_controller1', myBai1Controller1);
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+
+</html>
