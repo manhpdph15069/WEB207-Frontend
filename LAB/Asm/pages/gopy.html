@@ -1,0 +1,90 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+</head>
+<body ng-app="myApp"> -->
+    <form action="" name="frmGopY">
+        <h3 class="text-center mb-5 mt-2 text-primary">Góp ý cho chúng tôi</h3>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6">
+    
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-person-fill"></span>
+                    <input type="text" class="form-control" name="username" id="username" required minlength="6" ng-model="username" ng-model-options="{updateOn: 'blur', decoration: '1000'}" placeholder="Tên của bạn" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="text-danger" ng-hide="frmGopY.username.$valid || frmGopY.username.$untouched">
+                    <small ng-show="frmGopY.username.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmGopY.username.$error.minlength">Tên tài khoản tối thiểu 6 ký tự !!!</small>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6">
+    
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-envelope-fill" id="addon-wrapping"></span>
+                    <input type="email" class="form-control" ng-model="email" placeholder="Email" ng-model-options="{updateOn: 'blur', decoration: '1000'}" required id="email" name="email">
+                    <!-- <input type="text" class="form-control"  placeholder="Email" aria-label="Username" -->
+                        <!-- aria-describedby="addon-wrapping"> -->
+                </div>
+                <div class="text-danger" ng-hide="frmGopY.email.$valid || frmGopY.email.$untouched">
+                    <small ng-show="frmGopY.email.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmGopY.email.$error.email">Sai định dạng email !!!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-6 col-sm-6 col-md-6">
+    
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-telephone-fill" id="addon-wrapping"></span>
+                    <input type="text" class="form-control" id="sdt" ng-model="sdt" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="10" required pattern="0\d[0-9]\d((\d{4})|(\d{6}))" name="sdt" placeholder="Số điện thoại" aria-label="Username"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="text-danger" ng-hide="frmGopY.sdt.$valid || frmGopY.sdt.$untouched">
+                    <small ng-show="frmGopY.sdt.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmGopY.sdt.$error.pattern">Số điện thoại không hợp lệ !!!</small>
+                </div>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6">
+    
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-envelope-fill" id="addon-wrapping"></span>
+                    <input type="text" class="form-control" name="tieuDe" id="tieuDe" required maxlength="250" ng-model="tieuDe" ng-model-options="{updateOn: 'blur', decoration: '1000'}" placeholder="Tiêu đề" aria-label="tieuDe"
+                        aria-describedby="addon-wrapping">
+                </div>
+                <div class="text-danger" ng-hide="frmGopY.tieuDe.$valid || frmGopY.tieuDe.$untouched">
+                    <small ng-show="frmGopY.tieuDe.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmGopY.tieuDe.$error.maxlength">Max là 250 ký tự !!!</small>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5">
+    
+            <div class="form-floating">
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2"
+                    style="height: 250px"></textarea>
+                <label for="floatingTextarea2">Nội dung</label>
+            </div>
+        </div>
+        <div class="offset-5 mt-4 mb-2 row">
+    
+            <button type="button" class=" col-3 btn btn-outline-primary">Gửi</button>
+        </div>
+    
+    
+    </form>
+    <!-- <script src="jsApp/ctrlGopY.js"></script>
+    <script>
+        const app = angular.module('myApp', []);
+
+        app.controller('ctrl_gopy',ctrlGopY);
+
+    </script>
+</body>
+</html> -->

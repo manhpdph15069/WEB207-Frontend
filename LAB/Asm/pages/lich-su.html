@@ -1,0 +1,24 @@
+<div class="text-center">
+    <h1>Lịch sử thi</h1>
+</div>
+<div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tài khoản</th>
+            <th scope="col">Khóa học</th>
+            <th scope="col">Điểm</th>
+            <th scope="col">Trạng thái</th>
+          </tr>
+        </thead>
+     
+          <tr ng-repeat="l in lichsu">
+            <td>{{l.idStudent}}</td>
+            <td>{{l.idKhoaHoc}}</td>
+            <td>{{l.mark}}</td>
+            <td  ng-if="l.mark>=5">Đậu</td>
+            <td ng-if="l.mark<5">Rớt</td>
+          </tr>
+         
+      </table>
+</div>

@@ -1,0 +1,132 @@
+
+    <div  class="container border border-1 p-5 w-50" >
+        <div ng-show="isLoading" class="loading">
+            <div class="spinner-border text-primary spinner-center" role="status">
+            </div>
+        </div>
+        <div>
+            <div
+                class="alert {{ isSuccess ? 'alert-success' : 'alert-danger' }}"
+                ng-if="message.length != 0">
+                {{ message }}
+            </div>
+        <div class="row text-center text-primary">
+            <h2>Đăng Ký</h2>
+        </div>
+       <form action="" method="post" ng-submit="onSubmitForm($event)" name="frmDangKy">
+        <div class="row mt-4">
+            <div class="col-6">
+
+                <label for="">Tên tài khoản</label>
+                <div class="input-group mb-3">
+                    <input type="text" ng-model="sv.username" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="6" class="form-control" id="username" name="username" required>
+                </div>
+                    <div class="text-danger" ng-hide="frmDangKy.username.$valid || frmDangKy.username.$untouched">
+                        <small ng-show="frmDangKy.username.$error.required">Không được để trống !!!</small>
+                        <small ng-show="frmDangKy.username.$error.minlength">Tên tài khoản tối thiểu 6 ký tự !!!</small>
+                    </div>
+                </div>
+            
+            <div class="col-6">
+
+                <label for="">Tên người dùng</label>
+                <div class="input-group mb-3">
+                    <input type="text" ng-model="sv.fullname" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="6" required class="form-control" id="fullname" name="fullname">
+                </div>
+                <div class="text-danger" ng-hide="frmDangKy.fullname.$valid || frmDangKy.fullname.$untouched">
+                    <small ng-show="frmDangKy.fullname.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmDangKy.fullname.$error.minlength">Tên người dùng tối thiểu 6 ký tự !!!</small>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+
+                <label for="">Mật khẩu</label>
+                <div class="input-group mb-3">
+                    <input type="password" ng-model="sv.password" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="6" required class="form-control" id="pass1" name="pass1">
+                </div>
+                <div class="text-danger" ng-hide="frmDangKy.pass1.$valid || frmDangKy.pass1.$untouched">
+                    <small ng-show="frmDangKy.pass1.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmDangKy.pass1.$error.minlength">Mật khẩu tối thiểu 6 ký tự !!!</small>
+                </div>
+            </div>
+            
+            <div class="col-6">
+
+                <label for="">Xác nhận mật khẩu</label>
+                <div class="input-group mb-3">
+                    <input type="password" ng-model="pass2" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="6" required class="form-control" id="pass2" name="pass2">
+                </div>
+                <div class="text-danger"  ng-hide="frmDangKy.pass2.$valid || frmDangKy.pass2.$untouched">
+                    <small ng-show="frmDangKy.pass2.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmDangKy.pass2.$error.minlength">Mật khẩu tối thiểu 6 ký tự !!!</small>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+
+                <label for="">Email</label>
+                <div class="input-group mb-3">
+                    <input type="email" class="form-control" ng-model="sv.email" ng-model-options="{updateOn: 'blur', decoration: '1000'}" required id="email" name="email">
+                </div>
+                <div class="text-danger" ng-hide="frmDangKy.email.$valid || frmDangKy.email.$untouched">
+                    <small ng-show="frmDangKy.email.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmDangKy.email.$error.email">Sai định dạng email !!!</small>
+                </div>
+            </div>
+            
+            <div class="col-6">
+
+                <label for="">SĐT</label>
+                <div class="input-group mb-3">
+                    <input type="number" class="form-control" id="sdt" ng-model="sv.sdt" ng-model-options="{updateOn: 'blur', decoration: '1000'}" maxlength="10" required pattern="0\d[0-9]\d((\d{4})|(\d{6}))" name="sdt">
+                </div>
+                <div class="text-danger" ng-hide="frmDangKy.sdt.$valid || frmDangKy.sdt.$untouched">
+                    <small ng-show="frmDangKy.sdt.$error.required">Không được để trống !!!</small>
+                    <small ng-show="frmDangKy.sdt.$error.pattern">Số điện thoại không hợp lệ !!!</small>
+                </div>
+            </div>
+            
+        </div>
+        <div class="row mt-4">
+            <div class="col-6">
+
+                <label for="">Ngày sinh</label>
+                <div class="input-group mb-3">
+                    <input type="date" ng-model="sv.birthday" ng-model-options="{updateOn: 'blur', decoration: '1000'}" minlength="6" required class="form-control" id="birthday" name="birthday">
+                </div>
+                <div class="text-danger" ng-hide="frmDangKy.birthday.$valid || frmDangKy.birthday.$untouched">
+                    <small ng-show="frmDangKy.birthday.$error.required">Không được để trống !!!</small>
+                </div>
+            </div>
+            
+            <div class="col-6 p-2">
+                <div class="row">
+                    <label for="">Giới tính</label>
+                </div>
+                
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" ng-model="sv.gender" name="gender"  value="1" id="Nam" ng-checked="1">
+                    <label class="form-check-label" for="Nam">
+                      Nam
+                    </label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" ng-model="sv.gender" name="gender" value="0" id="Nu">
+                    <label class="form-check-label" for="Nu">
+                      Nữ
+                    </label>
+                  </div>                 
+            </div>
+            
+        </div>
+     
+        <div class="row mt-4 mb-3  ms-1 me-1">
+                <button type="button" ng-click="insert()" class="btn btn-primary col-12">Xác nhận</button>
+        </div>
+       </form>
+    </div>

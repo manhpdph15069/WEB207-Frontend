@@ -1,0 +1,124 @@
+<div class="row" ng-show="!inProgess">
+  <div class="col text-center">
+      <button class="btn btn-primary" ng-click="start()">Start the Quiz</button>
+  </div>
+</div>
+<div ng-show="inProgess">
+  <div class="row">
+    <!-- <a class="btn btn-primary mb-2 col-4">Bắt đầu</a> -->
+    <span class=" badge bg-secondary mb-2 float-start text-center fs-3" >&ensp; {{min}}:{{secTwo}}{{secOne}}</span>
+    <a href=""  href="#" data-bs-toggle="modal"
+    data-bs-target="#ktQuiz" class="mb-2 float-end btn btn-danger">Kết thúc</a>
+
+  </div>
+
+
+  <div class="card">
+    <div class="card-header fs-3">
+      <b>{{history.nameKH}}</b>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <h5 class="card-title col-11">{{listQKH[indexQA].text}}</h5>
+
+        <hr>
+      </div>
+
+
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dap_an" value="1" ng-model="dapan" id="#">
+        <label class="form-check-label" for="#">
+          {{listQKH[indexQA].answer1}}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dap_an" value="2" ng-model="dapan" id="#">
+        <label class="form-check-label" for="#">
+          {{listQKH[indexQA].answer2}}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dap_an" value="3" ng-model="dapan" id="#">
+        <label class="form-check-label" for="#">
+          {{listQKH[indexQA].answer3}}
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="dap_an" value="4" ng-model="dapan" id="#">
+        <label class="form-check-label" for="#">
+          {{listQKH[indexQA].answer4}}
+        </label>
+      </div>
+
+
+    </div>
+    <div class=" card-footer text-muted">
+      <div class="row">
+        <div  class="row col-4">
+          <div ng-show="hidenext">
+            <a href="" class="col-6 btn btn-info" ng-click="check()">Đáp án</a>
+
+          </div>
+          <div ng-show="!hidenext">
+            <a class="col-6 btn btn-primary" ng-click="next()">Tiếp</a>
+
+          </div>
+        </div>
+        <small style="text-align: center;" class="col-6 text-danger fs-4">{{tb}}</small>
+        <small class="col-2 mt-2 float-end">Câu: {{indexQA+1}}/10</small>
+      </div>
+    </div>
+  </div>
+  <div class="row text-center mt-5">
+
+    <div class="row text-center">
+      <!-- <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" ng-click="prev()">Trước</a></li>
+          <li class="page-item"><a class="page-link" ng-click="next()">Tiếp</a></li>
+        </ul>
+      </nav> -->
+    </div>
+  </div>
+
+  <div class="modal" id="ktQuiz" tabindex="-1" aria-labelledby="ktQuizLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ktQuizLabel">Kết thúc</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Bạn chắc chắn muốn nộp bài ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                <button type="button" data-bs-toggle="modal"
+                data-bs-target="#kqQuiz"  class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>
+  <div class="modal justify-content-center" id="kqQuiz" tabindex="-1" aria-labelledby="kqQuizLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="kqQuizLabel">Kết quả</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="text-center fs-2 modal-body">
+               <small>
+                 Điểm của là <b>{{history.mark}}</b>.
+                 <br>
+                 <span ng-if="history.mark>=5">Chúc mừng bạn đã qua môn.</span>
+                  <span ng-if="history.mark<5">Điểm của bạn không đủ qua môn.</span>
+               </small>
+
+            </div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" ng-click="endQuiz()">OK</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

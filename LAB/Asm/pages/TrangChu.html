@@ -1,0 +1,38 @@
+
+
+     <div>       <!-- Giữa -->
+
+                <div>
+                    <div class="row">
+                        <div ng-repeat="q in quizzs | limitTo: 4 : begin" class="col-12 col-xs-12 col-sm-6 col-md-6 p-0">
+                            <div class="card row p-0 m-3 mt-0 text-center">
+                                <img src="images/logos/{{q.logo}}" class="rounded mx-auto d-block col-6 p-0" alt="...">
+                                <div class="card-body p-0">
+                                </div>
+                                <div class="card-footer ">
+                                    <a class="text-decoration-none float-start"  >
+                                        {{q.nameKH}}
+                                    </a>
+                                    <a class="float-end btn btn-primary"  href="#!/pages/thi-trac-nhiem/{{q.id}}/{{q.nameKH}}">Kiểm tra</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row text-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item"><a ng-click="fist()" class="page-link" ><<|</a></li>
+                            <li class="page-item"><a class="page-link" ng-click="prev()" ><<</a></li>
+                            <li class="page-item"><a class="page-link"  ng-click="next()">>></a></li>
+                            <li class="page-item"><a class="page-link"  ng-click="last()">|>></a></li>
+                          </ul>
+                    </nav>
+                </div>
+
+            <!-- End Giữa -->
+
+  
+    </div>
+    <!-- end container -->

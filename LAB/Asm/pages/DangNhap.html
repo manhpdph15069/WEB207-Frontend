@@ -1,0 +1,50 @@
+
+    <div  class="container border border-1 p-3 col-12 col-xs-12 col-md-12"
+        style="width: 400px; margin-top: 150px;">
+        <div class="row text-center text-primary">
+            <h2>Đăng nhập</h2>
+        </div>
+        <form action="" name="frmLogin">
+            <div class="row mt-4">
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-person-fill" id="addon-wrapping"></span>
+                    <input type="text" name="userName" id="userName" ng-model="userName" class="form-control"
+                        placeholder="Username"  ng-model-options="{ updateOn:'blur',decoration:1000}" aria-label="Username" aria-describedby="addon-wrapping" required>
+                </div>
+                <div ng-hide="frmLogin.userName.$valid || frmLogin.userName.$untouched">
+                    <small class="text-danger" ng-show="frmLogin.userName.$invalid">Không được để trống !!!</small>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class=" input-group flex-nowrap">
+                    <span class="input-group-text bi bi-lock-fill" id="addon-wrapping"></span>
+                    <input type="password" class="form-control" id="pass" name="pass" ng-model="pass" placeholder="Password"
+                        minlength="6" ng-model-options="{ updateOn:'blur'}" required>
+                </div>
+                <div ng-hide="frmLogin.pass.$valid || frmLogin.pass.$untouched">
+                    <small class="text-danger" ng-show="frmLogin.pass.$error.required">Không được để trống !!!</small>
+                    <small class="text-danger" ng-show="frmLogin.pass.$error.minlength">Mật khẩu tối thiểu 6 ký tự !!!</small>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label text-primary" for="flexCheckDefault">
+                            Nhớ mật khẩu
+                        </label>
+                    </div>
+
+                </div>
+                <div class="col-6">
+                    <a href="#" class=" offset-4  text-decoration-none ">Quên mật khẩu</a>
+                </div>
+
+            </div>
+            <div class="row mt-4 mb-5 ms-1 me-1">
+                <button type="button" ng-click="loginApp()" class="btn btn-primary col-12 ">Đăng nhập</button>
+                <!-- <button type="button" class="btn btn-danger col-4 m-2">Đóng</button>   -->
+            </div>
+            <a href="#!/pages/dang-ky" class="offset-5 mb-0 p-0 text-decoration-none">Đăng ký</a>
+        </form>
+    </div>
